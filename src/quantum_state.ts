@@ -28,13 +28,15 @@ interface iQSInput {
   returnValue?: boolean
 }
 
-export const quantumState = (props: iQSInput, {
-  id,
-  initialValue = null,
-  returnValue = true
-}): [any, Function] => {
+export const quantumState = (props: iQSInput): [any, Function] => {
 
   const [_, set] = useState("")
+
+  const {
+    id,
+    initialValue = null,
+    returnValue = true
+  } = props
 
   if (!stores.hasOwnProperty(id)) {
     stores[id] = new Store()
