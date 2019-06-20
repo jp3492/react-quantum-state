@@ -158,7 +158,7 @@ function initializeReducers(inits: iInit[]) {
   }
 }
 
-export default {
+export {
   initializeReducers,
   quantumReducer,
   dispatchToReducer

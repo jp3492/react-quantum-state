@@ -60,7 +60,7 @@ function quantumState(props: iQSInput, {
   return [value, setValue]
 }
 
-export default {
+export {
   quantumState,
   setQuantumValue
 }
