@@ -20,7 +20,14 @@ const stores: any = {}
 export const setQuantumValue = (
   id: string,
   value: any
-) => stores[id].setValue(value)
+) => {
+  if (!stores[id]) {
+    stores[id] = new Store()
+    stores[id].setValue(value)
+  } else {
+    stores[id].setValue(value)
+  }
+}
 
 interface iQSInput {
   id: string,
