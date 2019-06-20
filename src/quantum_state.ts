@@ -17,7 +17,7 @@ class Store {
 
 const stores: any = {}
 
-const setQuantumValue = (
+export const setQuantumValue = (
   id: string,
   value: any
 ) => stores[id].setValue(value)
@@ -28,7 +28,7 @@ interface iQSInput {
   returnValue?: boolean
 }
 
-function quantumState(props: iQSInput, {
+export function quantumState(props: iQSInput, {
   id,
   initialValue = null,
   returnValue = true
@@ -58,9 +58,4 @@ function quantumState(props: iQSInput, {
   }
 
   return [value, setValue]
-}
-
-export {
-  quantumState,
-  setQuantumValue
 }
