@@ -61,7 +61,7 @@ interface iAction {
   body: any
 }
 
-export const dispatchToReducer = (props: iAction, {
+exports.dispatchToReducer = (props: iAction, {
   id,
   action
 }) => {
@@ -85,11 +85,11 @@ interface iQROutput {
   actions: object
 }
 
-export function quantumReducer(props: iQRInput,
+exports.quantumReducer = (props: iQRInput,
   {
     id,
     connect = true
-  }): iQROutput {
+  }): iQROutput => {
 
   const [_, set] = useState({})
 
@@ -135,7 +135,7 @@ interface iInit {
   options: object
 }
 
-export function initializeReducers(inits: iInit[]) {
+exports.initializeReducers = (inits: iInit[]) => {
   try {
     return inits.map((i: iInit) => {
       const {
