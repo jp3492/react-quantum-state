@@ -1,6 +1,6 @@
 {
   "name": "react-quantum-state",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Global state management library for React. Single function use within components. All Redux functionality withs seperated stores.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
