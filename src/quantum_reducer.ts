@@ -1,3 +1,7 @@
+//  TODO:
+//  Add dispatch to multiple Stores, simply pass array of store id's
+//  maybe just extend dispatchToStore id input to array
+
 import { useState, useEffect } from "react"
 
 interface iQRInit {
@@ -16,7 +20,7 @@ interface iQReducer {
 class Store {
   state: any
   reducer: any
-  actions: any
+  actions: any = {}
   subscriptions: Array<any> = []
   connectors: any = {}
   options: any = {}
@@ -24,7 +28,7 @@ class Store {
     this.reducer = props.reducer
     this.state = props.initialState
     this.actions = {}
-    this.options = props.options;
+    this.options = props.options
     Object.keys(props.actions).forEach(action => {
       this.actions = {
         ...this.actions,
